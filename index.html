@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <p>Enter first number <input id="n1" type="text"></p>
+    <select id="operator">
+        <option value="blank">please select a operator</option>
+        <option value="id1">+</option>
+        <option value="id2">-</option>
+        <option value="id3">*</option>
+        <option value="id4">/</option>
+      </select>
+      <p>Enter second number <input id="n2" type="text"></p>
+      <h2 id="solution" ><p>Ans is</p></h2>
+      <button  onclick="myFunction()" id="button">Submit</button>
+</body>
+</html>
+
+<script>
+    function myFunction(){
+        var first_number = document.getElementById("n1").value;
+        var e = document.getElementById("operator");
+        var operator = e.value;
+        var second_number = document.getElementById("n2").value;
+        if(operator == 'id1'){
+            var sum = parseInt(first_number)+parseInt(second_number)
+             document.getElementById("solution").innerHTML = sum;
+        }
+        if(operator == 'id2'){
+            var sub= parseInt(first_number)-parseInt(second_number)
+             document.getElementById("solution").innerHTML = sub;
+        }
+        if(operator == 'id3'){
+            var mul = parseInt(first_number)*parseInt(second_number)
+             document.getElementById("solution").innerHTML = mul;
+        }
+        if(operator == 'id4'){
+            var div = parseInt(first_number)/parseInt(second_number)
+             document.getElementById("solution").innerHTML = div;
+        }
+    }
+</script>
